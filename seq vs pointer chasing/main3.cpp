@@ -53,5 +53,5 @@ int main() {
   auto duration1 = std::chrono::system_clock::now().time_since_epoch();
   auto millis1 =
       std::chrono::duration_cast<std::chrono::milliseconds>(duration1).count();
-  printf("%lu ms\n", millis1 - millis);
+  printf("%lu ms | %u \n", millis1 - millis, end->values[1]);
 }

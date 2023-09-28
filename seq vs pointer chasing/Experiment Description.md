@@ -26,6 +26,11 @@ elements fit into a cache line when fetched by the CPU.
 
 ## Discussion
 
- 
+SIMD is king. For sequential scan there is heavy vectorization happening which completely gets missed if you
+do pointer chasing operation. Even for block based pointer chasing where each block had 14 elements there was
+vectorization happening in the inner loop which slightly improves the performance.
+There is also probably CPU data prefetching happening when sequential scan takes place though I don't know a way
+to exactly verify this at runtime. 
+Increasing the block array size and how much closer we can get to sequential scan operation can be checked later.
 
 
